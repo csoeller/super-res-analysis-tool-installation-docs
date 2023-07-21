@@ -1,8 +1,8 @@
 # R installation with Jupyter Notebooks
 
-Below I go through the steps I used (on a mac) to install R notebook infrstructure using the jupyter notebook approach.
+Below we go through the steps (as tested on a mac) to install an R notebook infrastructure using the jupyter notebook approach.
 
-Once you worked through the steps below you should be able to make new R notebooks from the Jupyter `New Notebook` menu which should allow you to select R, i.e. to open a new R notebook.
+Once you worked through the steps below you should be able to make new R notebooks from the Jupyter `New Notebook` menu which should allow you to select `R`, i.e. to open a new R notebook.
 
 ## Creating the environment and basic conda installs
 
@@ -39,17 +39,8 @@ R -e 'install.packages("ggbeeswarm")'
 
 ### Packages for plotting several panels
 
-Note that `gridExtra` is probably superfluous when using `patchwork`. In tests to date just using `patchwork` seemed enough. 
-
 ```
-R -e 'install.packages("gridExtra")'
 R -e 'install.packages("patchwork")'
-```
-
-### Package for reading excel data
-
-```
-R -e 'install.packages("readxl")'
 ```
 
 ### Package lawstat: Tools for Biostatistics, Public Policy, and Law
@@ -60,7 +51,7 @@ R -e 'install.packages("lawstat")'
 
 ## Conda install of jupyter support and register R kernel
 
-For this last part we are switching back to using `conda`. It seems pretty hassle-free and has always worked when I tried it.
+For this last part we are switching back to using `conda`. It seems pretty hassle-free and has always worked when we tried it.
 
 ```
 conda activate r-stats # activate r-stats env if not already done
