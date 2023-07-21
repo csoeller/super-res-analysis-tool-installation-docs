@@ -16,11 +16,11 @@ conda install -c conda-forge r-ggplot2
 
 ## Install some packages using R
 
-Below we install a few extra packages that are mainly useful for plotting which initially is our main motivation in using R. Rather than using `conda` which I found hit-and-miss in working properly for some of the packages, this uses R's builtin `install.packages` command. Below I use the way to this from the (mac) command line, but one can also do this from an R command line directly (e.g. in an RStudio session) and then type at the R command line `install.packages("xxxx")` where `xxxx` is a placeholder for the actual package name, see examples bow.
+Below we install a few extra packages that are useful for plotting and a few other tasks. Rather than using `conda` which seems to be hit-and-miss in working properly for some of the packages, we use use R's builtin `install.packages` command. Below this shown as carried out from the (mac) command line, but one can also do this from an R command line directly (e.g. in an RStudio session) and then type at the R command line `install.packages("xxxx")` where `xxxx` is a placeholder for the actual package name, see examples bow.
 
-### [Optional] Startup setting to avoid having to choose repo location each time
+### [Optional] Startup setting to avoid having to choose CRAN mirror location each time
 
-As explained in [this post](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r), it can be useful to set the default repo to autoselect from a close mirror. Otherwise, I always had to manually select a local Swiss mirror from a long list, before the command would execute. I added the following code to `$HOME/.Rprofile`:
+As explained in [this post](https://stackoverflow.com/questions/11488174/how-to-select-a-cran-mirror-in-r), it can be useful to set the default repo to autoselect from a close mirror. Otherwise, one always has to manually select a local Swiss mirror from a long list, before the command would execute, in every new R session. To avoid this one can add the following code to `$HOME/.Rprofile`:
 
 ```R
 ## Default repo
@@ -29,6 +29,8 @@ local({r <- getOption("repos")
        options(repos=r)
 })
 ```
+
+Presumably this should work on windows as well, provided one creates the file in the directory specified in the `$HOME` environment variable. See also this [stackoverflow post](https://stackoverflow.com/questions/46819684/how-to-access-and-edit-rprofile).
 
 ### Packages for quasirandom point plotting
 
