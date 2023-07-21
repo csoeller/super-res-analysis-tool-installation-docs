@@ -160,7 +160,7 @@ This should bring up dh5view with a small image containing random noise, as show
 
 1. Make sure you are using the anaconda prompt as you had used above.
 
-2. Next make sure you have activated the pyme-py3 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py38)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
+2. Next make sure you have activated the pyme-py38 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py38)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
 
         conda activate pyme-py38
 
