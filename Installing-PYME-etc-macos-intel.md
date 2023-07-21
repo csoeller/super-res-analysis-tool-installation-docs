@@ -1,12 +1,10 @@
 # Installing PYME on macOS - Python 3.X based install
 
-## Installation customised for Soellerlab at the University of Exeter
-
-This is a custom install that should ultimately work on most macOS machines. The install has the goal to make access to the latest code available relatively easily. It also reflects the relatively recent move of most code to github.
+This is a custom install that should ultimately work on most macOS machines. The install has the goal to make access to the latest code available relatively easily.
 
 ### Note for caution - this page is focused on py3
 
-**NOTE**: This guide focuses on a python 3.X based install. PYME has a tentive date of Jan 2121 to phase out python 2.7 based support.
+**NOTE**: This guide focuses on a python 3.X based install.
 
 ### This is a conda based installation
 
@@ -47,9 +45,9 @@ In the terminal window type the next 3 commands, one after another:
 ```python
 conda config --append channels anaconda
 conda config --add channels david_baddeley
-conda create --name pyme-py3 python=3.7 pyme-depends
+conda create --name pyme-py3 python=3.8 pyme-depends
 ```
-**Note**: We use python 3.7 following a check with the PYME core developers as currently recommended version. This will be subject to ongoing review 
+**Note**: We use python 3.8 following a check with the PYME core developers as currently recommended version. This will be subject to ongoing review 
 
 STEP 4: Activate the PYME default environment
 
@@ -65,7 +63,7 @@ STEP 5: Small fixes to correct conda issues
 
 PART 5A: Attempt to install scikit-image
 
-**Update**: scikit-image seems to install ok with conda and Python 3.7. So should *not* currently be needed.
+**Update**: scikit-image seems to install ok with conda and Python 3.8. So should *not* currently be needed.
 
 Next, try installing the scikit-image package. Ok if this succeeds, not fatal if not. Again, type in the terminal window:
 
@@ -73,7 +71,7 @@ Next, try installing the scikit-image package. Ok if this succeeds, not fatal if
 
 PART 5B: Upgrade pyface to >=7.1.0
 
-With the new traitsui 7.X in place we get an error about a conflict about the by default installed pyface - *pkg_resources.VersionConflict: (pyface 6.1.2 (/Users/csoe002/opt/anaconda2/envs/pyme-py3/lib/python3.7/site-packages), Requirement.parse('pyface>=7.1.0'))*
+With the new traitsui 7.X in place we get an error about a conflict about the by default installed pyface - *pkg_resources.VersionConflict: (pyface 6.1.2 (/Users/csoe002/opt/anaconda2/envs/pyme-py3/lib/python3.8/site-packages), Requirement.parse('pyface>=7.1.0'))*
 
 Fix with:
 

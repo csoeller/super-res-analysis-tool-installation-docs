@@ -1,13 +1,12 @@
-# Installing PYME on windows 10
+# Installing PYME on windows
 
-## Installation customised for Soellerlab at the University of Exeter
+## Installation tested on Win 11 and Win 10
 
-
-This is a custom install that should ultimately work on most windows 10 machines. The install has the goal to make access to the latest code available relatively easily. It also reflects the relatively recent move of most code to github.
+This is a custom install that should ultimately work on most modern windows machines. The install has the goal to make access to the latest code available relatively easily.
 
 ### This page is focused on py3
 
-**NOTE**: This guide focuses on a python 3.7 based install. Python 2.x based installs are discouraged as we are now beyond the supported lifetime of python 2.X.
+**NOTE**: This guide focuses on a python 3.X based install. Python 2.x based installs are discouraged as we are now well beyond the supported lifetime of python 2.X.
 
 ### Installation overview
 
@@ -35,7 +34,7 @@ Just follow the [STEP 1 paragraph](http://python-microscopy.org/doc/Installation
 
 **Note**: When installing miniconda you generally have a choice between different installers for python 2 and python 3. From the [miniconda docs](https://docs.conda.io/en/latest/miniconda.html): 
 
-*There are two variants of the installer: Miniconda is Python 2 based and Miniconda3 is Python 3 based. Note that the choice of which Miniconda is installed only affects the root environment. Regardless of which version of Miniconda you install, you can still install both Python 2.x and Python 3.x environments.*
+*There are two variants of the installer: Miniconda is Python 2 based and Miniconda3 is Python 3 based. Note that the choice of which Miniconda is installed only affects the base environment. Regardless of which version of Miniconda you install, you can still install both Python 2.x and Python 3.x environments.*
 
 Bottom line: it really doesn't matter as we will build a separate environment for PYME. But if you are pondering we advise a miniconda3 install as Python 3.X is the now fully supported version and you may want to use your `base` environment to play with Python commands using a 3.x version to practice Python 3 syntax and conventions.
 
@@ -55,16 +54,16 @@ In the anaconda prompt window type the next 2 commands, one after another:
 
 ```python
 conda config --add channels david_baddeley
-conda create --name pyme-py37 python=3.7 pyme-depends
+conda create --name pyme-py38 python=3.8 pyme-depends
 ```
 
 #####  Step 4: Activate the PYME default environment
 
 Now activate the new conda environment in your anaconda prompt window by typing:
 
-    conda activate pyme-py37
+    conda activate pyme-py38
 
-This should change your command prompt to show that you are now within the pyme-py3 environment, i.e.  ```(base)``` has changed to ```(pyme-py37)``` (in the screenshot below we demonstrate this with an environment called `pyme-default-plain`):
+This should change your command prompt to show that you are now within the pyme-py3 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)``` (in the screenshot below we demonstrate this with an environment called `pyme-default-plain`):
 
 ![conda-activate](images/conda-activate-env.png)
 
@@ -131,11 +130,11 @@ Details on the process you find on the [Windows compiler page](Installing-a-comp
 
 1. Make sure you are using the anaconda prompt as you had used above.
 
-2. Next make sure you have activated the pyme-py37 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py37)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
+2. Next make sure you have activated the pyme-py38 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py38)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
 
-        conda activate pyme-py37
+        conda activate pyme-py38
 
-This should change your command prompt to show that you are within the pyme-py37 environment, i.e.  ```(base)``` has changed to ```(pyme-py37)```.
+This should change your command prompt to show that you are within the pyme-py38 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)```.
 
 3. Now cd into the base directory of the python-microscopy repository on your disk. *This directory will be different for each machine* and is where you previously cloned the python-microscopy repository. That directory should contain a file ```setup.py``` as well as the subdirectory ```PYME``` and a bunch of other things.
 
@@ -161,11 +160,11 @@ This should bring up dh5view with a small image containing random noise, as show
 
 1. Make sure you are using the anaconda prompt as you had used above.
 
-2. Next make sure you have activated the pyme-py3 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py37)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
+2. Next make sure you have activated the pyme-py3 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py38)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
 
-        conda activate pyme-py37
+        conda activate pyme-py38
 
-This should change your command prompt to show that you are within the pyme-py37 environment, i.e.  ```(base)``` has changed to ```(pyme-py37)```.
+This should change your command prompt to show that you are within the pyme-py38 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)```.
 
 3. Now cd into the base directory of the ```pyme-extra``` repository on your disk. That directory should contain a file ```install_plugins.py``` as well as the subdirectory ```PYMEcs``` and a bunch of other things.
 
@@ -179,7 +178,7 @@ This should change your command prompt to show that you are within the pyme-py37
         #
         # normally you activate the environment first with
         # omit this next step if you are already in the environment in the command shell
-        conda activate pyme-py37
+        conda activate pyme-py38
         # cd to the PYME-extra subdirectory before issuing the commands below!
         
         python setup.py develop
@@ -191,7 +190,7 @@ Note that we leave out the ```dist``` argument in the plugin install call since 
 
 ##### Optional: build PYMEnf
 
-Local users may want to install and build `PYMEnf` that contains a few select non-free plugins (which we cannot easily make public due to licensing constraints). Details are in the [PYMEnf installation notes](Installing-PYMEnf.md).
+Local users may want to install and build `PYMEnf` that contains a few select non-free plugins (which we cannot easily make public due to licensing constraints).
 
 #### 6. Make a few shortcut files and launchers
 
