@@ -63,7 +63,7 @@ Now activate the new conda environment in your anaconda prompt window by typing:
 
     conda activate pyme-py38
 
-This should change your command prompt to show that you are now within the pyme-py3 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)``` (in the screenshot below we demonstrate this with an environment called `pyme-default-plain`):
+This should change your command prompt to show that you are now within the pyme-py38 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)``` (in the screenshot below we demonstrate this with an environment called `pyme-default-plain`):
 
 ![conda-activate](images/conda-activate-env.png)
 
