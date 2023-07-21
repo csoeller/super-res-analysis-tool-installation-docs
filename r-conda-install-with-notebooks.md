@@ -49,6 +49,12 @@ R -e 'install.packages("patchwork")'
 R -e 'install.packages("lawstat")'
 ```
 
+### Package plyr: Tools for Splitting, Applying and Combining Data
+
+```
+R -e 'install.packages("plyr")'
+```
+
 ## Conda install of jupyter support and register R kernel
 
 For this last part we are switching back to using `conda`. It seems pretty hassle-free and has always worked when we tried it.
