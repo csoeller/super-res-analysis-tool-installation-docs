@@ -186,7 +186,13 @@ This should change your command prompt to show that you are within the pyme-py38
 
 Note that we leave out the ```dist``` argument in the plugin install call since we are installing to your local login. We could probably also install to dist, but I want to try it like this first.
 
-6. Test: At this stage you should bring up visgui again, say, and check that all the expected extra menus are available. [*Note to self, show what menus should be available*]
+6. Test: At this stage you should bring up visgui again, say, and check that all the expected extra menus are available. This includes the `Experimental` and `qPAINT` menus.
+
+##### Getting jupyter notebook support going
+
+This needs another quick conda install:
+
+    conda install notebook
 
 ##### Optional: build PYMEnf
 
