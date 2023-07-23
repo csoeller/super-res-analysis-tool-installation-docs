@@ -1,4 +1,8 @@
-## Instructions to install PYME natively on macos ARM64 (M1, M2 etc)
+# Instructions to install PYME natively on macos ARM64 (M1, M2 etc)
+
+## Notes compiled when ARM support was relatively new
+
+We provide this as a record, possibly current installs could be simpler assuming that anaconda and conda support has become more smooth on ARM, but this is untested.
 
 ### Installing miniconda and xcode command line tools
 
@@ -17,11 +21,11 @@ Then I picked up the `xcode` command-line tools which is quite easy. There are a
 
 ### Installing PYME proper
 
-I made an environment to build PYME in and based that on Python 3.8 as a well tested version according to David Baddeley:
+In our installations to date we made an environment to build PYME in and based that on Python 3.8 as a well tested Python version according to David Baddeley:
 
 ```shell
-conda create -n pyme38_2 python=3.8
-conda activate pyme38_2
+conda create -n pyme38 python=3.8
+conda activate pyme38
 ```
 
 Next we install numpy, notably an accelerated version, whereas standard conda-forge packages seem to be not very optimised.
@@ -49,11 +53,12 @@ Finally, we build PYME itself, as usual using a development install.
 ```shell
 # build PYME
 cd pyme38 # this should be your directory with the latest PYME source
-/Users/csoe002/miniconda3/envs/pyme38_2/python.app/Contents/MacOS/python setup.py develop
+/Users/csoe002/miniconda3/envs/pyme38/python.app/Contents/MacOS/python setup.py develop
 dh5view -t
 ```
+**NOTE**: on the mac we seem to have to use the full path to the python binary (see command above), otherwise one gets "framework errors" with PYME GUI apps.
 
-This seems to give a working install, still testing but most things with `dh5view` and `PYMEVis` seem fine.
+This gave a working install.
 
 ### Getting jupyter notebook support going
 

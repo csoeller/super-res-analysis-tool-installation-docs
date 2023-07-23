@@ -1,6 +1,8 @@
 # R installation with Jupyter Notebooks
 
-Below we go through the steps (as tested on a mac) to install an R notebook infrastructure using the jupyter notebook approach.
+Below we go through the steps (the main section below as tested on a mac) to install an R notebook infrastructure using the jupyter notebook approach.
+
+There are some slightly modified instructions for windows further below.
 
 Once you worked through the steps below you should be able to make new R notebooks from the Jupyter `New Notebook` menu which should allow you to select `R`, i.e. to open a new R notebook.
 
@@ -67,3 +69,50 @@ conda install -c conda-forge jupyter
 conda install -c conda-forge r-irkernel
 R -e 'IRkernel::installspec()'
 ```
+
+# Tweaks for Windows
+
+On windows we need a slightly tweaked set of instructions, listed compactly below.
+
+	conda create -n r-stats
+	conda activate r-stats
+	conda install -c conda-forge r-recommended
+	conda install -c conda-forge r-ggplot2
+
+### Set the default CRAN mirror
+
+Now we briefly follow [these instructions](https://stackoverflow.com/questions/46819684/how-to-access-and-edit-rprofile) to edit .Rprofile. In particular, open an R command line, and then issue this command:
+
+	file.edit(file.path("~", ".Rprofile")) # edit .Rprofile in HOME
+
+This brings up notepad and you can paste the recommended text into .Rprofile:
+
+	## Set Default CRAN mirror
+	local({r <- getOption("repos")
+       	r["CRAN"] <- "https://cloud.r-project.org" 
+       	options(repos=r)
+	})
+
+Now carry on with the rest of install.
+
+### Remainder of Windows install
+
+Note windows specific quotes which need to be as shown below, the mac style quotations do not work!
+
+
+	R -e "install.packages('beeswarm')"
+	R -e "install.packages('ggbeeswarm')"
+	R -e "install.packages('patchwork')"
+	R -e "install.packages('lawstat')"
+	R -e "install.packages('plyr')"
+	conda install -c conda-forge jupyter
+	conda install -c conda-forge r-irkernel
+	R -e IRkernel::installspec()
+
+
+Now you can change directory to your top level notebook directory
+
+	cd top_dir_where_notebooks_reside
+	jupyter notebook # open notebook server for R notebooks
+
+The file interface that comes up allows you to open existing `R` notebooks and create new ones.

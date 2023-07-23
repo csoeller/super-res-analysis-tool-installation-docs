@@ -47,7 +47,7 @@ conda config --append channels anaconda
 conda config --add channels david_baddeley
 conda create --name pyme-py3 python=3.8 pyme-depends
 ```
-**Note**: We use python 3.8 following a check with the PYME core developers as currently recommended version. This will be subject to ongoing review 
+**Note**: We use python 3.8 following a check with the PYME core developers as currently recommended version. This will be subject to ongoing review. On recent windows installs python >3.7 resulted in conflicts and if issues are encountered, building with `python=3.7` is worth a try.
 
 STEP 4: Activate the PYME default environment
 

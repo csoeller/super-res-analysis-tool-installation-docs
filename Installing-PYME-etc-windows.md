@@ -8,6 +8,8 @@ This is a custom install that should ultimately work on most modern windows mach
 
 **NOTE**: This guide focuses on a python 3.X based install. Python 2.x based installs are discouraged as we are now well beyond the supported lifetime of python 2.X.
 
+Below we use Python 3.7, more recent Python versions seem to have a conda conflict on windows which we will investigate. On Mac, 3.8 has already been successfully used.
+
 ### Installation overview
 
 The complete install can be broken down into a few higher level steps as follows:
@@ -24,7 +26,9 @@ The complete install can be broken down into a few higher level steps as follows
 
 5. Make a few shortcut files etc to simplify launching the various apps (visgui, dh5view, etc).
 
-6. Test the install.
+6. Install Jupyter notebook support
+
+7. Test the install.
 
 #### 1. Install the Anaconda packaging system
 
@@ -54,16 +58,16 @@ In the anaconda prompt window type the next 2 commands, one after another:
 
 ```python
 conda config --add channels david_baddeley
-conda create --name pyme-py38 python=3.8 pyme-depends
+conda create --name pyme-py37 python=3.7 pyme-depends
 ```
 
 #####  Step 4: Activate the PYME default environment
 
 Now activate the new conda environment in your anaconda prompt window by typing:
 
-    conda activate pyme-py38
+    conda activate pyme-py37
 
-This should change your command prompt to show that you are now within the pyme-py38 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)``` (in the screenshot below we demonstrate this with an environment called `pyme-default-plain`):
+This should change your command prompt to show that you are now within the pyme-py37 environment, i.e.  ```(base)``` has changed to ```(pyme-py37)``` (in the screenshot below we demonstrate this with an environment called `pyme-default-plain`):
 
 ![conda-activate](images/conda-activate-env.png)
 
@@ -130,11 +134,11 @@ Details on the process you find on the [Windows compiler page](Installing-a-comp
 
 1. Make sure you are using the anaconda prompt as you had used above.
 
-2. Next make sure you have activated the pyme-py38 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py38)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
+2. Next make sure you have activated the pyme-py37 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py37)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
 
-        conda activate pyme-py38
+        conda activate pyme-py37
 
-This should change your command prompt to show that you are within the pyme-py38 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)```.
+This should change your command prompt to show that you are within the pyme-py37 environment, i.e.  ```(base)``` has changed to ```(pyme-py37)```.
 
 3. Now cd into the base directory of the python-microscopy repository on your disk. *This directory will be different for each machine* and is where you previously cloned the python-microscopy repository. That directory should contain a file ```setup.py``` as well as the subdirectory ```PYME``` and a bunch of other things.
 
@@ -160,11 +164,11 @@ This should bring up dh5view with a small image containing random noise, as show
 
 1. Make sure you are using the anaconda prompt as you had used above.
 
-2. Next make sure you have activated the pyme-py38 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py38)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
+2. Next make sure you have activated the pyme-py37 environment. Remember that you only need to use the ```conda activate``` command if you do not yet see the ```(pyme-py37)``` at the command prompt, but rather ```(base)```  or something similar. If necessary, issue the command:
 
-        conda activate pyme-py38
+        conda activate pyme-py37
 
-This should change your command prompt to show that you are within the pyme-py38 environment, i.e.  ```(base)``` has changed to ```(pyme-py38)```.
+This should change your command prompt to show that you are within the pyme-py37 environment, i.e.  ```(base)``` has changed to ```(pyme-py37)```.
 
 3. Now cd into the base directory of the ```pyme-extra``` repository on your disk. That directory should contain a file ```install_plugins.py``` as well as the subdirectory ```PYMEcs``` and a bunch of other things.
 
@@ -178,7 +182,7 @@ This should change your command prompt to show that you are within the pyme-py38
         #
         # normally you activate the environment first with
         # omit this next step if you are already in the environment in the command shell
-        conda activate pyme-py38
+        conda activate pyme-py37
         # cd to the PYME-extra subdirectory before issuing the commands below!
         
         python setup.py develop
@@ -188,20 +192,26 @@ Note that we leave out the ```dist``` argument in the plugin install call since 
 
 6. Test: At this stage you should bring up visgui again, say, and check that all the expected extra menus are available. This includes the `Experimental` and `qPAINT` menus.
 
-##### Getting jupyter notebook support going
-
-This needs another quick conda install:
-
-    conda install notebook
-
 ##### Optional: build PYMEnf
 
 Local users may want to install and build `PYMEnf` that contains a few select non-free plugins (which we cannot easily make public due to licensing constraints).
 
 #### 6. Make a few shortcut files and launchers
 
-The details for this part of the install have gone into their own document which you can find in this repository.
+The details for this part of the install have gone into their own document, consult the [Windows launcher page](PYME-windows-launchers.md).
 
-#### 7. Testing the install
+#### 8. Getting jupyter notebook support going
+
+This needs another quick conda install:
+
+    conda install notebook
+
+You can now open an anaconda prompt, activate the PYME environment (see above), cd into the root directory of your data and start the notebook server with the command
+
+	jupyter nootebook
+
+The file interface that comes up allows you to open existing python notebooks and create new ones.
+
+#### 8. Testing the install
 
 Tests have been described above in various parts of the install. Please check out the various steps for details.
