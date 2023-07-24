@@ -126,6 +126,19 @@ This should bring up dh5view with a small image containing random noise, as show
 
 ![dh5view-test](images/dh5view-test.png)
 
+#### Getting jupyter notebook support going
+
+This needs another quick conda install:
+
+    conda install notebook
+
+You can now open an anaconda prompt, activate the PYME environment (see above), cd into the root directory of your data and start the notebook server with the command
+
+	jupyter nootebook
+
+The file interface that comes up allows you to open existing python notebooks and create new ones.
+
+
 ##### Build other auxiliary packages
 
-We have a few additional auxiliary packages, such as `PYME-extra`, `PYMEnf` and `PYME-cs-siteconfig` plus some sample data (`PYME-extra-example-data`). We have [installation notes](Installing-PYMEnf.md) for `PYMEnf`. `PYME-extra` is covered in the [PYME windows installation notes](Installing-PYME-with-py3-win10.md). `PYME-cs-siteconfig` has [its own notes](PYMEAcquire/PYME-cs-siteconfig.md) in the `PYMEAcquire` section of these installation notes.
+We have a few additional auxiliary packages, such as `PYME-extra`, `PYMEnf` and `PYME-cs-siteconfig` plus some sample data (`PYME-extra-example-data`). `PYME-extra` is covered in the [PYME windows installation notes](Installing-PYME-etc-windows.md).
