@@ -2,7 +2,9 @@
 
 ## Notes compiled when ARM support was relatively new
 
-We provide this as a record, possibly current installs could be simpler assuming that anaconda and conda support has become more smooth on ARM, but this is untested.
+We provide this as a record, possibly current installs could be simpler assuming that anaconda and conda support has become more smooth on ARM.
+
+Total install time, including PYME-extra install, is estimated at 1 h. If issues are encountered, this can increase with extra time for trouble shooting. Please feel free contact us if issues are encountered.
 
 ### Installing miniconda and xcode command line tools
 
