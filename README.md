@@ -4,7 +4,7 @@ In this repository we collect and update a number of documents that detail the a
 
 The documents are generally focused on conda based installs and use the Python and R programming infrastructure. Specifically, we heavily use the python-microscopy environment (abbreviated as PYME) and related packages.
 
-Our current focus is on "development installs", i.e. installs that use the github sources of key packages and describe the build process on the platforms that we regularly use, i.e. Windows and Mac. In the future we might add descriptions of "one-click-installers" where available. The development installs make it relatively easy to track ongoing development in the main github repos that we use to install bug-fixes, new features etc.
+Our current focus is on "development installs", i.e. installs that use the github sources of key packages and describe the build process on the platforms that we regularly use, i.e. Windows and Mac. In the future we will add descriptions of "one-click-installers" where available. The development installs make it relatively easy to track ongoing development in the main github repos that we use to install bug-fixes, new features etc.
 
 The descriptions are generally tested at the time of writing but may fall behind recent developments (due to updates in conda, Python, R etc) over time. We make an effort to regularly update these documents. If you think you notice issues please use the issue tracker associated with this repository to report problems.
 
