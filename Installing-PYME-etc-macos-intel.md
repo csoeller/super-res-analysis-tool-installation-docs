@@ -2,6 +2,8 @@
 
 This is a custom install that should ultimately work on most macOS machines. The install has the goal to make access to the latest code available relatively easily.
 
+Total install time, including PYME-extra install, is estimated at 1 h. If issues are encountered, this can increase with extra time for trouble shooting. Please feel free to contact us if issues are encountered.
+
 ### Note for caution - this page is focused on py3
 
 **NOTE**: This guide focuses on a python 3.X based install.
