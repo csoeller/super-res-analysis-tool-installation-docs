@@ -55,7 +55,7 @@ Finally, we build PYME itself, as usual using a development install.
 ```shell
 # build PYME
 cd pyme38 # this should be your directory with the latest PYME source
-/Users/csoe002/miniconda3/envs/pyme38/python.app/Contents/MacOS/python setup.py develop
+~/miniconda3/envs/pyme38/python.app/Contents/MacOS/python setup.py develop
 dh5view -t
 ```
 **NOTE**: on the mac we seem to have to use the full path to the python binary (see command above), otherwise one gets "framework errors" with PYME GUI apps.
